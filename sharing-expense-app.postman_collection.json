@@ -1,0 +1,916 @@
+{
+	"info": {
+		"_postman_id": "109f160a-b5d0-4ef2-96fd-b48dd6062826",
+		"name": "sharing-expense-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29648391",
+		"_collection_link": "https://task00-1685.postman.co/workspace/f47802df-8a66-4a7e-a5aa-170f019e86c7/collection/29648391-109f160a-b5d0-4ef2-96fd-b48dd6062826?action=share&source=collection_link&creator=29648391"
+	},
+	"item": [
+		{
+			"name": "register-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"user1@example.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login-user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg0MDFiNzZhNDhlNmQ3ODMxOTY0NmZhIn0sImlhdCI6MTc0OTAzMzM1MywiZXhwIjoxNzQ5NjM4MTUzfQ.Jzl8K_jb6gecbjY9_EfK2HsdeRA15zrw4ThzLwlokBI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg0MDFiNzZhNDhlNmQ3ODMxOTY0NmZhIn0sImlhdCI6MTc0OTAzMzA5OSwiZXhwIjoxNzQ5NjM3ODk5fQ.zFZQ1Fv_Ug65lz6TlWG17OOtAVzKIfDpfUt3BUADNNM\"\n",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Weekend Trip\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/groups",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"groups"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Group",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg0MDFiNzZhNDhlNmQ3ODMxOTY0NmZhIn0sImlhdCI6MTc0OTAzMzA5OSwiZXhwIjoxNzQ5NjM3ODk5fQ.zFZQ1Fv_Ug65lz6TlWG17OOtAVzKIfDpfUt3BUADNNM\"\n",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Team didrnner\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/groups",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"groups"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "141"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8d-35J76W8Qwf6s1Q7OlETEMXL71IA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 04 Jun 2025 15:49:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Team didrnner\",\n    \"ownerId\": \"684056becc76d486d17bd202\",\n    \"_id\": \"68406af86646db24d840e742\",\n    \"createdAt\": \"2025-06-04T15:49:12.244Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Invite user via Email",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"Qammu@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000 /api/groups/6840581dcc76d486d17bd209/invite",
+							"host": [
+								"localhost"
+							],
+							"port": "5000 ",
+							"path": [
+								"api",
+								"groups",
+								"6840581dcc76d486d17bd209",
+								"invite"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "105"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"69-2rCdhA932bfN0Fo03NgSwTSwW+Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 04 Jun 2025 14:29:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"inviteLink\": \"/api/groups/6840581dcc76d486d17bd209/join?token=8a2165ba9f2b734c8a4f4bd17f248cdb8ca8bfef\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Join group via Invite",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg0MDFiNzZhNDhlNmQ3ODMxOTY0NmZhIiwiZW1haWwiOiJRYW1tdUBnbWFpbC5jb20ifSwiaWF0IjoxNzQ5MDQ1NjcyLCJleHAiOjE3NDk2NTA0NzJ9.0q8bhNtb2Q1HWNm2J9LacVnlZnjBtgU_YvaVgvZ9Pf4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/groups/6840516a4034366521cbf83f/join?token=b8dc366e7b5abc2fe07ebddf090c0795f8b710d8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"groups",
+						"6840516a4034366521cbf83f",
+						"join"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "b8dc366e7b5abc2fe07ebddf090c0795f8b710d8"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/groups/6840581dcc76d486d17bd209/join?token=8a2165ba9f2b734c8a4f4bd17f248cdb8ca8bfef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"groups",
+								"6840581dcc76d486d17bd209",
+								"join"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "8a2165ba9f2b734c8a4f4bd17f248cdb8ca8bfef"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-p9xKwp8hgJqDFp5kzldpyyEgD9M\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 04 Jun 2025 14:30:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Joined group successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add expense to group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg0MDJkNDMyYmNhMTNhOTJkNDQ2NDZjIiwiZW1haWwiOiJTYW5peWFAZ21haWwuY29tIn0sImlhdCI6MTc0OTA0NDQwOSwiZXhwIjoxNzQ5NjQ5MjA5fQ.9trEKw0ksOD1DeKCOUPkQziCPNguyP6Oxzmzv58Lcb4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg0MDJkNDMyYmNhMTNhOTJkNDQ2NDZjIn0sImlhdCI6MTc0OTAzNjM4NywiZXhwIjoxNzQ5NjQxMTg3fQ.RIixbdk-Mmv5EwnPABRNEXGJrBxPZeEGlRd3FUob7o4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \" NEW YEAR function\",\r\n  \"amount\": 12300,\r\n  \"participants\": [\"test1@gmail.com\", \"test@gmail.com\",\"Qammu@gmail.com\",\"Saniya@gmail.com\",\"Sam@gmail.com\"]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/groups/6840581dcc76d486d17bd209/expenses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"groups",
+						"6840581dcc76d486d17bd209",
+						"expenses"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add expense to group",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg0MDJkNDMyYmNhMTNhOTJkNDQ2NDZjIn0sImlhdCI6MTc0OTAzNjM4NywiZXhwIjoxNzQ5NjQxMTg3fQ.RIixbdk-Mmv5EwnPABRNEXGJrBxPZeEGlRd3FUob7o4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Team lunch\",\r\n  \"amount\": 1300,\r\n  \"participants\": [\"test1@gmail.com\", \"test@gmail.com\",\"Qammu@gmail.com\",\"Saniya@gmail.com\",\"Sam@gmail.com\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/groups/68406af86646db24d840e742/expenses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"groups",
+								"68406af86646db24d840e742",
+								"expenses"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "558"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22e-ahWNiiiixW/J7t/sjb4E1hljysU\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 04 Jun 2025 15:49:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"groupId\": \"68406af86646db24d840e742\",\n    \"description\": \"Team lunch\",\n    \"amount\": 1300,\n    \"paidBy\": \"684056becc76d486d17bd202\",\n    \"participants\": [\n        \"68401b76a48e6d78319646fa\",\n        \"68403635e4dde1f6c1d7d1b1\",\n        \"68402d432bca13a92d44646c\",\n        \"68401621663a5a18e9d680d2\",\n        \"68401619663a5a18e9d680cf\"\n    ],\n    \"sharePerUser\": {\n        \"68401b76a48e6d78319646fa\": 260,\n        \"68403635e4dde1f6c1d7d1b1\": 260,\n        \"68402d432bca13a92d44646c\": 260,\n        \"68401621663a5a18e9d680d2\": 260,\n        \"68401619663a5a18e9d680cf\": 260\n    },\n    \"createdBy\": \"684056becc76d486d17bd202\",\n    \"_id\": \"68406b0f6646db24d840e747\",\n    \"createdAt\": \"2025-06-04T15:49:35.266Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Get the group expense",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg0MDJkNDMyYmNhMTNhOTJkNDQ2NDZjIiwiZW1haWwiOiJTYW5peWFAZ21haWwuY29tIn0sImlhdCI6MTc0OTA0NDQwOSwiZXhwIjoxNzQ5NjQ5MjA5fQ.9trEKw0ksOD1DeKCOUPkQziCPNguyP6Oxzmzv58Lcb4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg0MDJkNDMyYmNhMTNhOTJkNDQ2NDZjIn0sImlhdCI6MTc0OTAzNjM4NywiZXhwIjoxNzQ5NjQxMTg3fQ.RIixbdk-Mmv5EwnPABRNEXGJrBxPZeEGlRd3FUob7o4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/groups/6840581dcc76d486d17bd209/expenses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"groups",
+						"6840581dcc76d486d17bd209",
+						"expenses"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get the group expense",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg0MDJkNDMyYmNhMTNhOTJkNDQ2NDZjIn0sImlhdCI6MTc0OTAzNjM4NywiZXhwIjoxNzQ5NjQxMTg3fQ.RIixbdk-Mmv5EwnPABRNEXGJrBxPZeEGlRd3FUob7o4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/groups/6840581dcc76d486d17bd209/expenses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"groups",
+								"6840581dcc76d486d17bd209",
+								"expenses"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "777"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"309-e8sYIYtXCqei6o+ERsSiIICbgGI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 04 Jun 2025 15:49:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"684058f6cc76d486d17bd213\",\n        \"groupId\": \"6840581dcc76d486d17bd209\",\n        \"description\": \" NEW YEAR function\",\n        \"amount\": 12300,\n        \"paidBy\": {\n            \"_id\": \"68402d432bca13a92d44646c\",\n            \"email\": \"Saniya@gmail.com\"\n        },\n        \"participants\": [\n            {\n                \"_id\": \"68401b76a48e6d78319646fa\",\n                \"email\": \"Qammu@gmail.com\"\n            },\n            {\n                \"_id\": \"68403635e4dde1f6c1d7d1b1\",\n                \"email\": \"Sam@gmail.com\"\n            },\n            {\n                \"_id\": \"68402d432bca13a92d44646c\",\n                \"email\": \"Saniya@gmail.com\"\n            },\n            {\n                \"_id\": \"68401621663a5a18e9d680d2\",\n                \"email\": \"test1@gmail.com\"\n            },\n            {\n                \"_id\": \"68401619663a5a18e9d680cf\",\n                \"email\": \"test@gmail.com\"\n            }\n        ],\n        \"sharePerUser\": {\n            \"68401b76a48e6d78319646fa\": 2460,\n            \"68403635e4dde1f6c1d7d1b1\": 2460,\n            \"68402d432bca13a92d44646c\": 2460,\n            \"68401621663a5a18e9d680d2\": 2460,\n            \"68401619663a5a18e9d680cf\": 2460\n        },\n        \"createdBy\": \"68402d432bca13a92d44646c\",\n        \"createdAt\": \"2025-06-04T14:32:22.535Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Add settlements",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg0MDU2YmVjYzc2ZDQ4NmQxN2JkMjAyIiwiZW1haWwiOiJBcnphYW5AZ21haWwuY29tIn0sImlhdCI6MTc0OTA1MjEyOCwiZXhwIjoxNzQ5NjU2OTI4fQ.ls7acqezixNzBMJMzctr3e1IY9e9huyUisVF9VHmyis",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"payerId\": \"60dfb8c7e8154b23d8a1f0c1\",  \r\n  \"payeeId\": \"60dfb8c7e8154b23d8a1f0c2\",  \r\n  \"amount\": 250\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/groups/68406af86646db24d840e742/settlements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"groups",
+						"68406af86646db24d840e742",
+						"settlements"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add settlements",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"payerId\": \"60dfb8c7e8154b23d8a1f0c2\",\r\n  \"payeeId\": \"60dfb8c7e8154b23d8a1f0c3\",\r\n  \"amount\": 896\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/groups/68406af86646db24d840e742/settlements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"groups",
+								"68406af86646db24d840e742",
+								"settlements"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-qyxl/esT6+FCJCg6pkm9gejHuOU\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 04 Jun 2025 17:09:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Settlement recorded\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get settlements for user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg0MDU2YmVjYzc2ZDQ4NmQxN2JkMjAyIiwiZW1haWwiOiJBcnphYW5AZ21haWwuY29tIn0sImlhdCI6MTc0OTA1MjEyOCwiZXhwIjoxNzQ5NjU2OTI4fQ.ls7acqezixNzBMJMzctr3e1IY9e9huyUisVF9VHmyis",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/users/60dfb8c7e8154b23d8a1f0c2/settlements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"60dfb8c7e8154b23d8a1f0c2",
+						"settlements"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/users/60dfb8c7e8154b23d8a1f0c2/settlements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"60dfb8c7e8154b23d8a1f0c2",
+								"settlements"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4432"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1150-KIjUmrtL7RPDcWoEnZP/hIoLHzo\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 04 Jun 2025 17:12:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"68407dd5eb5ee7feb2895db1\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c3\",\n            \"name\": \"Jane\",\n            \"email\": \"jane@example.com\"\n        },\n        \"amount\": 896,\n        \"date\": \"2025-06-04T17:09:41.722Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"68407b2eeb5ee7feb2895da5\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c3\",\n            \"name\": \"Jane\",\n            \"email\": \"jane@example.com\"\n        },\n        \"amount\": 896,\n        \"date\": \"2025-06-04T16:58:22.265Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"684078d0d564543f6c646eeb\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c3\",\n            \"name\": \"Jane\",\n            \"email\": \"jane@example.com\"\n        },\n        \"amount\": 80370,\n        \"date\": \"2025-06-04T16:48:16.456Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"684078ab09f3d34e779a84e1\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c3\",\n            \"name\": \"Jane\",\n            \"email\": \"jane@example.com\"\n        },\n        \"amount\": 8037,\n        \"date\": \"2025-06-04T16:47:39.862Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6840789009f3d34e779a84d8\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c3\",\n            \"name\": \"Jane\",\n            \"email\": \"jane@example.com\"\n        },\n        \"amount\": 837,\n        \"date\": \"2025-06-04T16:47:12.283Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6840773e1cf41922c82231b6\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c3\",\n            \"name\": \"Jane\",\n            \"email\": \"jane@example.com\"\n        },\n        \"amount\": 6987,\n        \"date\": \"2025-06-04T16:41:34.313Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"684076e851d01fa91731dcab\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c3\",\n            \"name\": \"Jane\",\n            \"email\": \"jane@example.com\"\n        },\n        \"amount\": 687,\n        \"date\": \"2025-06-04T16:40:08.642Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"684075948209e518b5e7bb41\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c3\",\n            \"name\": \"Jane\",\n            \"email\": \"jane@example.com\"\n        },\n        \"amount\": 67,\n        \"date\": \"2025-06-04T16:34:28.143Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"684074f46bbfaa948f08ea7c\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c3\",\n            \"name\": \"Jane\",\n            \"email\": \"jane@example.com\"\n        },\n        \"amount\": 100,\n        \"date\": \"2025-06-04T16:31:48.319Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"684074e36bbfaa948f08ea76\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c3\",\n            \"name\": \"Jane\",\n            \"email\": \"jane@example.com\"\n        },\n        \"amount\": 14427,\n        \"date\": \"2025-06-04T16:31:31.054Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"68407404790937c9e669f5e8\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c3\",\n            \"name\": \"Jane\",\n            \"email\": \"jane@example.com\"\n        },\n        \"amount\": 14427,\n        \"date\": \"2025-06-04T16:27:48.042Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"684073ccc926b905f3407554\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c3\",\n            \"name\": \"Jane\",\n            \"email\": \"jane@example.com\"\n        },\n        \"amount\": 11494427,\n        \"date\": \"2025-06-04T16:26:52.780Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6840734c36880daaf28ffccd\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c3\",\n            \"name\": \"Jane\",\n            \"email\": \"jane@example.com\"\n        },\n        \"amount\": 1144427,\n        \"date\": \"2025-06-04T16:24:44.038Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"684071ecaefafb4eda34bea4\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c3\",\n            \"name\": \"Jane\",\n            \"email\": \"jane@example.com\"\n        },\n        \"amount\": 1127,\n        \"date\": \"2025-06-04T16:18:52.162Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"68406ca76646db24d840e751\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"payerId\": null,\n        \"payeeId\": {\n            \"_id\": \"60dfb8c7e8154b23d8a1f0c2\",\n            \"name\": \"John\",\n            \"email\": \"john@example.com\"\n        },\n        \"amount\": 250,\n        \"date\": \"2025-06-04T15:56:23.950Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET /api/groups/:groupId/balances",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6..."
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/groups/68406af86646db24d840e742/balances",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"groups",
+								"68406af86646db24d840e742",
+								"balances"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1529"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5f9-ftEU9b2eUKUbH7CfPtcAr8uMMnM\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 04 Jun 2025 17:57:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"68406b10ed63702a99e358a5\",\n        \"from\": {\n            \"_id\": \"68401619663a5a18e9d680cf\",\n            \"email\": \"test@gmail.com\"\n        },\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"to\": {\n            \"_id\": \"684056becc76d486d17bd202\",\n            \"email\": \"Arzaan@gmail.com\"\n        },\n        \"__v\": 0,\n        \"amount\": 260,\n        \"createdAt\": \"2025-06-04T15:49:35.539Z\",\n        \"updatedAt\": \"2025-06-04T15:49:35.539Z\"\n    },\n    {\n        \"_id\": \"68406b10ed63702a99e358a4\",\n        \"from\": {\n            \"_id\": \"68401621663a5a18e9d680d2\",\n            \"email\": \"test1@gmail.com\"\n        },\n        \"to\": {\n            \"_id\": \"684056becc76d486d17bd202\",\n            \"email\": \"Arzaan@gmail.com\"\n        },\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"__v\": 0,\n        \"amount\": 260,\n        \"createdAt\": \"2025-06-04T15:49:35.487Z\",\n        \"updatedAt\": \"2025-06-04T15:49:35.487Z\"\n    },\n    {\n        \"_id\": \"68406b10ed63702a99e358a1\",\n        \"from\": {\n            \"_id\": \"68401b76a48e6d78319646fa\",\n            \"email\": \"Qammu@gmail.com\"\n        },\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"to\": {\n            \"_id\": \"684056becc76d486d17bd202\",\n            \"email\": \"Arzaan@gmail.com\"\n        },\n        \"__v\": 0,\n        \"amount\": 260,\n        \"createdAt\": \"2025-06-04T15:49:35.322Z\",\n        \"updatedAt\": \"2025-06-04T15:49:35.322Z\"\n    },\n    {\n        \"_id\": \"68406b10ed63702a99e358a3\",\n        \"from\": {\n            \"_id\": \"68402d432bca13a92d44646c\",\n            \"email\": \"Saniya@gmail.com\"\n        },\n        \"to\": {\n            \"_id\": \"684056becc76d486d17bd202\",\n            \"email\": \"Arzaan@gmail.com\"\n        },\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"__v\": 0,\n        \"amount\": 260,\n        \"createdAt\": \"2025-06-04T15:49:35.437Z\",\n        \"updatedAt\": \"2025-06-04T15:49:35.437Z\"\n    },\n    {\n        \"_id\": \"68406b10ed63702a99e358a2\",\n        \"groupId\": \"68406af86646db24d840e742\",\n        \"to\": {\n            \"_id\": \"684056becc76d486d17bd202\",\n            \"email\": \"Arzaan@gmail.com\"\n        },\n        \"from\": {\n            \"_id\": \"68403635e4dde1f6c1d7d1b1\",\n            \"email\": \"Sam@gmail.com\"\n        },\n        \"__v\": 0,\n        \"amount\": 260,\n        \"createdAt\": \"2025-06-04T15:49:35.382Z\",\n        \"updatedAt\": \"2025-06-04T15:49:35.382Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "api/users/:userId/groups",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg0MDU2YmVjYzc2ZDQ4NmQxN2JkMjAyIiwiZW1haWwiOiJBcnphYW5AZ21haWwuY29tIn0sImlhdCI6MTc0OTA1OTYxNSwiZXhwIjoxNzQ5NjY0NDE1fQ.LBbjH-whYL7ZS_dtZ1BDavcN6LTnnkYt011cCuN8wlw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/users/68401b76a48e6d78319646fa/groups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"68401b76a48e6d78319646fa",
+						"groups"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/users/68401b76a48e6d78319646fa/groups",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"68401b76a48e6d78319646fa",
+								"groups"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "428"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1ac-OttaBEPdFecF5M2RYnEznJ7pqhw\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 04 Jun 2025 18:28:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"684021ecacaaac490af4b88a\",\n        \"name\": \"Weekend Trip\",\n        \"ownerId\": \"68401b76a48e6d78319646fa\",\n        \"createdAt\": \"2025-06-04T10:37:32.405Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6840516a4034366521cbf83f\",\n        \"name\": \"NEW YEARS Evenbn\",\n        \"ownerId\": \"68402d432bca13a92d44646c\",\n        \"createdAt\": \"2025-06-04T14:00:10.877Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6840581dcc76d486d17bd209\",\n        \"name\": \"Friends Trip\",\n        \"ownerId\": \"684056becc76d486d17bd202\",\n        \"createdAt\": \"2025-06-04T14:28:45.929Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		}
+	]
+}
